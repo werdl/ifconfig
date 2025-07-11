@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ ip }}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>ip address</<td>
+                <td>{{ ip }}</td>
+            </tr>
+            <tr>
+                <td>user agent</td>
+                <td>{{ agent }}</td>
+            </tr>
+            <tr>
+                <td>language</td>
+                <td>{{ language }}</td>
+            </tr>
+            <tr>
+                <td>method</td>
+                <td>{{ method }}</td>
+            </tr>
+            <tr>
+                <td>mime type</td>
+                <td>{{ mime }}</td>
+            </tr>
+            <tr>
+                <td>scheme</td>
+                <td>{{ scheme }}</td>
+            </tr>
+            <tr>
+                <td>headers</td>
+                <td>
+                    <table id="headers">
+                        <tr>
+                            <th>key</th>
+                            <th>value</th>
+                        </tr>
+                        {% for key, value in headers.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
